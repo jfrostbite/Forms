@@ -1,0 +1,92 @@
+/**
+ * 创建仓库 需要rel板
+ * 引用注意报错
+ */
+
+apply plugin: 'com.android.library'
+apply plugin: 'maven'
+
+def libVerName = PROJ_VERSION
+def libVerCode = 1
+
+android {
+    compileSdkVersion 25
+    buildToolsVersion "25.0.3"
+
+    defaultConfig {
+        minSdkVersion 19
+        targetSdkVersion 25
+        versionCode libVerCode
+        versionName libVerName
+
+        testInstrumentationRunner "android.support.test.runner.AndroidJUnitRunner"
+    }
+
+    buildTypes {
+        release {
+            minifyEnabled true
+            proguardFiles getDefaultProguardFile('proguard-android.txt'), 'proguard-rules.pro'
+        }
+    }
+
+    repositories {
+        flatDir {
+            dirs 'libs'
+        }
+    }
+}
+
+allprojects {
+    repositories {
+        jcenter()
+        maven { url LOCAL_REPO_URL }
+    }
+}
+
+dependencies {
+    androidTestCompile('com.android.support.test.espresso:espresso-core:2.2.2', {
+        exclude group: 'com.android.support', module: 'support-annotations'
+    })
+    compile 'com.android.support:appcompat-v7:25.3.1'
+    testCompile 'junit:junit:4.12'
+    compile 'com.google.code.gson:gson:2.8.1'
+    compile 'com.myscript.atk:core:2.2'
+    compile 'com.myscript.atk:im:2.2'
+    compile 'com.myscript.atk:Widget:2.2'
+    compile 'com.myscript.atk:Text:2.2'
+}
+
+uploadArchives {
+    configuration = configurations.archives
+    repositories {
+        mavenDeployer {
+            // 私有仓库的地址，以及账户
+            repository(url: LOCAL_REPO_URL) {
+                authentication(userName: 'admin', password: 'admin123')
+            }
+            // Library的配置
+            pom.project {
+                version libVerName
+                artifactId PROJ_ARTIFACTID
+                groupId PROJ_GROUP
+                packaging PROJ_TYPE
+                description PROJ_DES
+            }
+            /*//去除对common的引用
+            pom.whenConfigured { pom ->
+                def common = pom.dependencies.find { dep -> dep.artifactId == 'MyScript_ATK-Core-android-component' }
+                pom.dependencies.remove(common)
+                def common1 = pom.dependencies.find { dep -> dep.artifactId == 'MyScript_ATK-Text-android-component' }
+                pom.dependencies.remove(common1)
+                def common2 = pom.dependencies.find { dep -> dep.artifactId == 'MyScript_ATK-IMCommon-android-component' }
+                pom.dependencies.remove(common2)
+                def common3 = pom.dependencies.find { dep -> dep.artifactId == 'MyScript_ATK-SingleLineWidget-android-widget' }
+                pom.dependencies.remove(common3)
+            }*/
+        }
+    }
+}
+
+artifacts {
+    archives file('identify.aar')
+}

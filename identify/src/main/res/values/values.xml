@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <declare-styleable name="FormLayout">
+        <attr name="prime_width" format="float"/>
+        <attr name="prime_height" format="float"/>
+    </declare-styleable>
+
+    <attr name="FormDefStyle" format="reference"/>
+</resources>

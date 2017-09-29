@@ -1,0 +1,38 @@
+<resources>
+    <string name="app_name">嘉实基金</string>
+    <string name="list_pen_info">笔信息</string>
+    <string name="draw_action_convert">转换文本</string>
+    <string name="draw_action_convert_">快速识别(测试)</string>
+    <string name="title_activity_guide">设备连接</string>
+    <string name="title_activity_main">嘉实基金</string>
+    <string name="title_activity_form">表单主页</string>
+    <string name="title_activity_ele_form">电子表单</string>
+    <string name="drawer_menu_item_1">项目一</string>
+    <string name="device_list">设备列表：</string>
+    <string name="guide_tip_1">长按笔的电源键，待指示灯红绿交替闪烁时\n点击右上角连接按钮</string>
+    <string name="guide_tip_2">正在尝试连接…</string>
+    <string name="guide_tip_3">设备连接成功\n\n点击开启酷神笔生活</string>
+    <string name="list_pen_cancel">注销</string>
+    <string name="draw_action_clean">重置</string>
+    <string name="form_action_photo">拍照</string>
+    <string-array name="sudoku_info_array">
+        <item>基金认购</item>
+        <item>账户业务(机构版)</item>
+        <item>账户业务(个人版)</item>
+    </string-array>
+    <!--原始张张大小-->
+    <integer name="page_width">155</integer>
+    <integer name="page_height">215</integer>
+    <integer name="api_offset_x">0</integer>
+    <integer name="api_offset_y">-432</integer>
+    <!--表单范围制作原始基点-->
+    <string-array name="old_base_point">
+        <item>8.84375</item>
+        <item>21.890625</item>
+    </string-array>
+    <!--表单范围调整原始基点-->
+    <string-array name="new_base_point">
+        <item>8.84375</item>
+        <item>21.890625</item>
+    </string-array>
+</resources>

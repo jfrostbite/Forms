@@ -1,0 +1,14 @@
+<resources>
+    <string name="app_name">IDentify</string>
+    <string name="bundle_zh">zh_CN</string>
+    <string name="bundle_en">en_US</string>
+    <string name="config_digit">digit</string>
+    <string name="config_en_upcase">en</string>
+    <string name="config_email">cur_email</string>
+    <string name="config_text">cur_text</string>
+    <string name="config_id">cur_id</string>
+    <string name="config_ud">cur_ud</string>
+    <string name="config_uld">cur_uld</string>
+    <string name="config_zd">cur_zd</string>
+    <string name="config_ab">cur_ab</string>
+</resources>

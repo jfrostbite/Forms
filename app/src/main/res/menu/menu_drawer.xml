@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu xmlns:android="http://schemas.android.com/apk/res/android">
+    <group android:enabled="true" >
+
+        <item android:id="@+id/drawer_menu_item1"
+            android:title="@string/drawer_menu_item_1"
+            />
+    </group>
+</menu>

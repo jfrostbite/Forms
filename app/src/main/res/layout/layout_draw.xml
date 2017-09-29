@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".module.fund.draw.DrawActivity"
+    >
+
+    <android.support.v4.view.ViewPager
+        android:id="@+id/vp_draw_main"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        >
+        
+    </android.support.v4.view.ViewPager>
+
+    <com.e_eduspace.forms.widget.DrawingBoard
+        android:id="@+id/db_draw_main"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        />
+</RelativeLayout>
